@@ -1,4 +1,4 @@
-Real-Time Order Tracker
+Real Time Order Tracker
 A high performance, event driven system designed to track database changes and propagate updates to connected clients in real time without the need for client side polling.
 
 Project Overview
