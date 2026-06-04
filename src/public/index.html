@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>Live Order Updates</h1>
+    <div id="updates">Waiting for updates...</div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      // Listen for the 'order_update' event from the server
+      socket.on("order_update", (data) => {
+        console.log("Update received:", data);
+
+        const updatesDiv = document.getElementById("updates");
+        const newUpdate = document.createElement("p");
+        newUpdate.innerText = `Change Type: ${data.operationType} | ID: ${data.documentKey._id}`;
+        updatesDiv.prepend(newUpdate);
+      });
+    </script>
+  </body>
+</html>
